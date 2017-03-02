@@ -1,7 +1,7 @@
-package com.example.action;
+package com.morgan.example.action;
 
 
-import com.example.form.HelloWorldForm;
+import com.morgan.example.form.HelloWorldForm;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -16,9 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloWorldAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setContentType("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         HelloWorldForm helloWorldForm = (HelloWorldForm) form;
-        helloWorldForm.setGreeting("Hello World Struts!");
-
+        String s = helloWorldForm.getHelloMsg();
+        helloWorldForm.setHelloMsg(helloWorldForm.getHelloMsg());
         return mapping.findForward("success");
     }
 }
