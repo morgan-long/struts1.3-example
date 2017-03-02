@@ -13,7 +13,7 @@
 </head>
 <body>
 <h2>Hello World Struts!</h2>
-<%--<h2><marquee direction=right>您输入的内容是：<bean:write name="helloWorldForm" property="helloMsg" /></marquee></h2>--%>
+<h2><marquee direction=right>您输入的内容是：<bean:write name="helloWorldForm" property="helloMsg" /></marquee></h2>
 <form name="helloForm" action="">
     <input type="button" value="返回主页" onclick="index()">
 </form>
