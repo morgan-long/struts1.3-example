@@ -6,12 +6,19 @@
 
 <struts-config>
         <form-beans>
-                <form-bean name="helloWorldForm" type="com.example.form.HelloWorldForm" />
+                <form-bean name="helloWorldForm" type="com.morgan.example.form.HelloWorldForm" />
+                <form-bean name="loginActionForm" type="com.morgan.example.form.LoginActionForm"/>
         </form-beans>
 
         <action-mappings>
-                <action path="/helloWorld" type="com.example.action.HelloWorldAction" name="helloWorldForm">
-                        <forward name="success" path="/helloWorld.jsp" />
+                <action path="/helloWorld" type="com.morgan.example.action.HelloWorldAction" name="helloWorldForm">
+                        <forward name="success" path="/helloWorld.jsp"/>
+                        <forward name="index" path="/index.jsp"/>
+                </action>
+                <action path="/login" type="com.morgan.example.action.LoginAction" name="loginActionForm">
+                        <forward name="success" path="/login_success.jsp"/>
+                        <forward name="error" path="/login_error.jsp"/>
+                        <forward name="index" path="/index.jsp"/>
                 </action>
         </action-mappings>
 </struts-config>
